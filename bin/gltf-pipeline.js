@@ -10,6 +10,7 @@ const glbToGltf = require('../lib/glbToGltf');
 const gltfToGlb = require('../lib/gltfToGlb');
 const processGlb = require('../lib/processGlb');
 const processGltf = require('../lib/processGltf');
+const toPaletteMesh = require('../lib/toPaletteMesh');
 
 const defaultValue = Cesium.defaultValue;
 const defined = Cesium.defined;
@@ -164,6 +165,7 @@ for (i = 0; i < length; ++i) {
 }
 
 const options = {
+    customStages: toPaletteMesh,
     resourceDirectory: inputDirectory,
     separate: argv.separate,
     separateTextures: argv.separateTextures,
